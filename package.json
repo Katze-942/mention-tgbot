@@ -1,0 +1,42 @@
+{
+  "name": "mention-tgbot",
+  "version": "1.0.0",
+  "description": "Telegram bot that allows you to mention all users or admins.",
+  "main": "./src/index.ts",
+  "repository": "https://github.com/DarkVessel/mention-tgbot",
+  "author": "Жора Змейкин <rs5334819@gmail.com>",
+  "engines": {
+    "node": ">=18.12.*"
+  },
+  "scripts": {
+    "start": "ts-node .",
+    "test": "ts-node src/test.ts",
+    "initFiles": "ts-node src/generateBaseFiles.ts",
+    "allTest": "mocha src/tests/*.test.ts --exit",
+    "configTest": "mocha src/tests/correctnessOfConfigs.test.ts --exit",
+    "dialogueTagTest": "mocha src/tests/dialogueTag.test.ts",
+    "dialogueTest": "mocha src/tests/dialogues.test.ts"
+  },
+  "dependencies": {
+    "@types/mocha": "^10.0.1",
+    "@types/node": "*",
+    "@types/node-fetch": "^2.6.2",
+    "@types/strftime": "^0.9.4",
+    "@typescript-eslint/parser": "^5.45.0",
+    "dotenv": "^16.0.3",
+    "eslint-plugin-mocha": "^10.1.0",
+    "grammy": "^1.12.0",
+    "mocha": "^10.1.0",
+    "telegram": "^2.14.7",
+    "ts-node": "^10.9.1"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.45.0",
+    "eslint": "^8.0.1",
+    "eslint-config-standard-with-typescript": "^23.0.0",
+    "eslint-plugin-import": "^2.25.2",
+    "eslint-plugin-n": "^15.0.0",
+    "eslint-plugin-promise": "^6.0.0",
+    "typescript": "*"
+  }
+}
