@@ -1,4 +1,4 @@
-import { access, appendFileSync, copyFileSync, writeFileSync } from 'fs'
+import { access, appendFileSync, copyFileSync, existsSync, mkdirSync, writeFileSync } from 'fs'
 import { config } from 'dotenv'
 
 console.log('[LOG] Launch!')
@@ -63,6 +63,7 @@ access('src/config/basic.json', (err) => {
 access('data/configGroup.json', (err) => {
   if (err) {
     console.log('[configGroup.json] File configGroup.json does not exist. Creating.')
+    if (!existsSync('./data')) mkdirSync('data')
     writeFileSync('data/configGroup.json', '{}')
     console.log('[configGroup.json] The file has been created! Done.')
   } else {
